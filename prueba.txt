@@ -1,0 +1,461 @@
+Installing...
+Running as single site... To run multisite, use -c tests/phpunit/multisite.xml
+Not running ms-files tests. To execute these, use --group ms-files.
+Not running external-http tests. To execute these, use --group external-http.
+PHPUnit 7.5.8 by Sebastian Bergmann and contributors.
+
+  Warning - The configuration file did not pass validation!
+  The following problems have been detected:
+
+  Line 11:
+  - Element 'testsuite': The attribute 'name' is required but missing.
+
+  Test results may not be as expected.
+
+
+.                                                                   1 / 1 (100%)WPAjaxDieContinueException Object
+(
+    [message:protected] => 
+    [string:Exception:private] => 
+    [code:protected] => 0
+    [file:protected] => /tmp/wordpress-tests-lib/includes/testcase-ajax.php
+    [line:protected] => 224
+    [trace:Exception:private] => Array
+        (
+            [0] => Array
+                (
+                    [file] => /tmp/wordpress/wp-includes/functions.php
+                    [line] => 3012
+                    [function] => dieHandler
+                    [class] => WP_Ajax_UnitTestCase
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => 
+                            [1] => 
+                            [2] => Array
+                                (
+                                    [response] => 
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => /tmp/wordpress/wp-includes/functions.php
+                    [line] => 3635
+                    [function] => wp_die
+                    [args] => Array
+                        (
+                            [0] => 
+                            [1] => 
+                            [2] => Array
+                                (
+                                    [response] => 
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => /media/Datos/CarlosData/paginasweb/wordpress/wp-content/plugins/zemoga-wizard-form/includes/class-zwf-ajax.php
+                    [line] => 119
+                    [function] => wp_send_json
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [type] => error
+                                    [messages] => Array
+                                        (
+                                            [zwf_birth_date] => Invalid date
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => /tmp/wordpress/wp-includes/class-wp-hook.php
+                    [line] => 286
+                    [function] => process_data
+                    [class] => ZWFAJAX
+                    [type] => ::
+                    [args] => Array
+                        (
+                            [0] => 
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => /tmp/wordpress/wp-includes/class-wp-hook.php
+                    [line] => 310
+                    [function] => apply_filters
+                    [class] => WP_Hook
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => 
+                            [1] => Array
+                                (
+                                    [0] => 
+                                )
+
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => /tmp/wordpress/wp-includes/plugin.php
+                    [line] => 465
+                    [function] => do_action
+                    [class] => WP_Hook
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [0] => 
+                                )
+
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [file] => /tmp/wordpress-tests-lib/includes/testcase-ajax.php
+                    [line] => 261
+                    [function] => do_action
+                    [args] => Array
+                        (
+                            [0] => wp_ajax_process_data
+                            [1] => 
+                        )
+
+                )
+
+            [7] => Array
+                (
+                    [file] => /media/Datos/CarlosData/paginasweb/wordpress/wp-content/plugins/zemoga-wizard-form/tests/test-ajax-methods.php
+                    [line] => 51
+                    [function] => _handleAjax
+                    [class] => WP_Ajax_UnitTestCase
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => process_data
+                        )
+
+                )
+
+            [8] => Array
+                (
+                    [file] => phar:///usr/bin/phpunit/phpunit/Framework/TestCase.php
+                    [line] => 1153
+                    [function] => test_process_data_from_ZWFAJAX
+                    [class] => TestZemogaAJAX
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [9] => Array
+                (
+                    [file] => phar:///usr/bin/phpunit/phpunit/Framework/TestCase.php
+                    [line] => 842
+                    [function] => runTest
+                    [class] => PHPUnit\Framework\TestCase
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [10] => Array
+                (
+                    [file] => phar:///usr/bin/phpunit/phpunit/Framework/TestResult.php
+                    [line] => 687
+                    [function] => runBare
+                    [class] => PHPUnit\Framework\TestCase
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [11] => Array
+                (
+                    [file] => phar:///usr/bin/phpunit/phpunit/Framework/TestCase.php
+                    [line] => 796
+                    [function] => run
+                    [class] => PHPUnit\Framework\TestResult
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => TestZemogaAJAX Object
+                                (
+                                    [_last_response:protected] => {"type":"error","messages":{"zwf_birth_date":"Invalid date"}}
+                                    [_error_level:protected] => 32767
+                                    [expected_deprecated:protected] => Array
+                                        (
+                                        )
+
+                                    [caught_deprecated:protected] => Array
+                                        (
+                                        )
+
+                                    [expected_doing_it_wrong:protected] => Array
+                                        (
+                                        )
+
+                                    [caught_doing_it_wrong:protected] => Array
+                                        (
+                                        )
+
+                                    [backupGlobals:protected] => 
+                                    [backupGlobalsBlacklist:protected] => Array
+                                        (
+                                        )
+
+                                    [backupStaticAttributes:protected] => 
+                                    [backupStaticAttributesBlacklist:protected] => Array
+                                        (
+                                        )
+
+                                    [runTestInSeparateProcess:protected] => 
+                                    [preserveGlobalState:protected] => 1
+                                    [runClassInSeparateProcess:PHPUnit\Framework\TestCase:private] => 
+                                    [inIsolation:PHPUnit\Framework\TestCase:private] => 1
+                                    [data:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [dataName:PHPUnit\Framework\TestCase:private] => 
+                                    [useErrorHandler:PHPUnit\Framework\TestCase:private] => 
+                                    [expectedException:PHPUnit\Framework\TestCase:private] => 
+                                    [expectedExceptionMessage:PHPUnit\Framework\TestCase:private] => 
+                                    [expectedExceptionMessageRegExp:PHPUnit\Framework\TestCase:private] => 
+                                    [expectedExceptionCode:PHPUnit\Framework\TestCase:private] => 
+                                    [name:PHPUnit\Framework\TestCase:private] => test_process_data_from_ZWFAJAX
+                                    [dependencies:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [dependencyInput:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [iniSettings:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [locale:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [mockObjects:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [mockObjectGenerator:PHPUnit\Framework\TestCase:private] => 
+                                    [status:PHPUnit\Framework\TestCase:private] => -1
+                                    [statusMessage:PHPUnit\Framework\TestCase:private] => 
+                                    [numAssertions:PHPUnit\Framework\TestCase:private] => 0
+                                    [result:PHPUnit\Framework\TestCase:private] => PHPUnit\Framework\TestResult Object
+                                        (
+                                            [passed:protected] => Array
+                                                (
+                                                )
+
+                                            [errors:protected] => Array
+                                                (
+                                                )
+
+                                            [failures:protected] => Array
+                                                (
+                                                )
+
+                                            [warnings:protected] => Array
+                                                (
+                                                )
+
+                                            [notImplemented:protected] => Array
+                                                (
+                                                )
+
+                                            [risky:protected] => Array
+                                                (
+                                                )
+
+                                            [skipped:protected] => Array
+                                                (
+                                                )
+
+                                            [listeners:protected] => Array
+                                                (
+                                                )
+
+                                            [runTests:protected] => 1
+                                            [time:protected] => 0
+                                            [topTestSuite:protected] => 
+                                            [codeCoverage:protected] => 
+                                            [convertErrorsToExceptions:protected] => 1
+                                            [stop:protected] => 
+                                            [stopOnError:protected] => 
+                                            [stopOnFailure:protected] => 
+                                            [stopOnWarning:protected] => 
+                                            [beStrictAboutTestsThatDoNotTestAnything:protected] => 1
+                                            [beStrictAboutOutputDuringTests:protected] => 
+                                            [beStrictAboutTodoAnnotatedTests:protected] => 
+                                            [beStrictAboutResourceUsageDuringSmallTests:protected] => 
+                                            [enforceTimeLimit:protected] => 
+                                            [timeoutForSmallTests:protected] => 1
+                                            [timeoutForMediumTests:protected] => 10
+                                            [timeoutForLargeTests:protected] => 60
+                                            [stopOnRisky:protected] => 
+                                            [stopOnIncomplete:protected] => 
+                                            [stopOnSkipped:protected] => 
+                                            [lastTestFailed:protected] => 
+                                            [defaultTimeLimit:PHPUnit\Framework\TestResult:private] => 0
+                                            [stopOnDefect:PHPUnit\Framework\TestResult:private] => 
+                                            [registerMockObjectsFromTestArgumentsRecursively:PHPUnit\Framework\TestResult:private] => 
+                                        )
+
+                                    [testResult:PHPUnit\Framework\TestCase:private] => 
+                                    [output:PHPUnit\Framework\TestCase:private] => 
+                                    [outputExpectedRegex:PHPUnit\Framework\TestCase:private] => 
+                                    [outputExpectedString:PHPUnit\Framework\TestCase:private] => 
+                                    [outputCallback:PHPUnit\Framework\TestCase:private] => 
+                                    [outputBufferingActive:PHPUnit\Framework\TestCase:private] => 1
+                                    [outputBufferingLevel:PHPUnit\Framework\TestCase:private] => 1
+                                    [snapshot:PHPUnit\Framework\TestCase:private] => 
+                                    [prophet:PHPUnit\Framework\TestCase:private] => 
+                                    [beStrictAboutChangesToGlobalState:PHPUnit\Framework\TestCase:private] => 
+                                    [registerMockObjectsFromTestArgumentsRecursively:PHPUnit\Framework\TestCase:private] => 
+                                    [warnings:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [groups:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                    [doesNotPerformAssertions:PHPUnit\Framework\TestCase:private] => 
+                                    [customComparators:PHPUnit\Framework\TestCase:private] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [12] => Array
+                (
+                    [file] => Standard input code
+                    [line] => 283
+                    [function] => run
+                    [class] => PHPUnit\Framework\TestCase
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => PHPUnit\Framework\TestResult Object
+                                (
+                                    [passed:protected] => Array
+                                        (
+                                        )
+
+                                    [errors:protected] => Array
+                                        (
+                                        )
+
+                                    [failures:protected] => Array
+                                        (
+                                        )
+
+                                    [warnings:protected] => Array
+                                        (
+                                        )
+
+                                    [notImplemented:protected] => Array
+                                        (
+                                        )
+
+                                    [risky:protected] => Array
+                                        (
+                                        )
+
+                                    [skipped:protected] => Array
+                                        (
+                                        )
+
+                                    [listeners:protected] => Array
+                                        (
+                                        )
+
+                                    [runTests:protected] => 1
+                                    [time:protected] => 0
+                                    [topTestSuite:protected] => 
+                                    [codeCoverage:protected] => 
+                                    [convertErrorsToExceptions:protected] => 1
+                                    [stop:protected] => 
+                                    [stopOnError:protected] => 
+                                    [stopOnFailure:protected] => 
+                                    [stopOnWarning:protected] => 
+                                    [beStrictAboutTestsThatDoNotTestAnything:protected] => 1
+                                    [beStrictAboutOutputDuringTests:protected] => 
+                                    [beStrictAboutTodoAnnotatedTests:protected] => 
+                                    [beStrictAboutResourceUsageDuringSmallTests:protected] => 
+                                    [enforceTimeLimit:protected] => 
+                                    [timeoutForSmallTests:protected] => 1
+                                    [timeoutForMediumTests:protected] => 10
+                                    [timeoutForLargeTests:protected] => 60
+                                    [stopOnRisky:protected] => 
+                                    [stopOnIncomplete:protected] => 
+                                    [stopOnSkipped:protected] => 
+                                    [lastTestFailed:protected] => 
+                                    [defaultTimeLimit:PHPUnit\Framework\TestResult:private] => 0
+                                    [stopOnDefect:PHPUnit\Framework\TestResult:private] => 
+                                    [registerMockObjectsFromTestArgumentsRecursively:PHPUnit\Framework\TestResult:private] => 
+                                )
+
+                        )
+
+                )
+
+            [13] => Array
+                (
+                    [file] => Standard input code
+                    [line] => 2914
+                    [function] => __phpunit_run_isolated_test
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [previous:Exception:private] => 
+)
+
+
+Time: 4.06 seconds, Memory: 34.25 MB
+
+OK (1 test, 1 assertion)

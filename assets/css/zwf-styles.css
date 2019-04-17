@@ -1,0 +1,35 @@
+.zwf_container .zwf_field_group {
+	display: flex;
+}
+
+.zwf_container .zwf_field {
+	margin-bottom: 20px;
+}
+
+.zwf_container .zwf_field_group .zwf_field {
+	flex: 1 0 49%;
+}
+
+.zwf_container .zwf_field_group .zwf_field:nth-child(1) {
+	margin-right: 2%;
+}
+
+.zwf_container .zwf_field select,
+.zwf_container .zwf_field input {
+	display: block;
+	width: 100%;
+}
+
+.zwf_container .field_error {
+    color: #f00;
+}
+
+.zwf_container .hide {
+    display: none;
+}
+
+.zwf_container .zwf_steps {
+	text-align: center;
+	font-weight: bold;
+}
+
