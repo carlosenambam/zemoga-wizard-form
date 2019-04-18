@@ -1,0 +1,25 @@
+{
+  "name": "zemoga-wizard-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node ./node_modules/qunit/bin/qunit 'tests/*-test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosenambam/zemoga-wizard-form.git"
+  },
+  "author": "Carlos Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosenambam/zemoga-wizard-form/issues"
+  },
+  "homepage": "https://github.com/carlosenambam/zemoga-wizard-form#readme",
+  "devDependencies": {
+    "qunit": "^2.9.2"
+  }
+}
