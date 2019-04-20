@@ -243,6 +243,9 @@ QUnit.module('getFormData function', {
     $('.zwf_container #step1 [id^="zwf_"]').each((index, field) => {
       $(field).val('');
     });
+    $('.zwf_container #step2 [id^="zwf_"]').each((index, field) => {
+      $(field).val('');
+    });
   },
 });
 
@@ -358,4 +361,42 @@ QUnit.test('All fields are correct, step = 2', (assert) => {
   assert.equal(formData.nonce, zwf_vars.nonce);
   userId = auxUserId;
   step = auxStep;
+});
+
+///////////////////////////////////////////////////////////////
+
+QUnit.module('sendData method', {
+  after: () => {
+    userId = 1;
+  },
+});
+
+QUnit.test('valid form data, step = 1', async (assert) => {
+  const done = assert.async();
+  $.mockjax({
+    url: '/test',
+    data: (formData) => {
+      assert.equal(formData.zwf_first_name, 'Carlos');
+      assert.equal(formData.zwf_last_name, 'Alvarez');
+      assert.equal(formData.zwf_gender, 'M');
+      assert.equal(formData.zwf_birth_date, '1991-09-20');
+      return true;
+    },
+    responseText: {
+      type: 'success',
+      user_id: 1,
+    },
+  });
+
+  const formData = {
+    zwf_first_name: 'Carlos',
+    zwf_last_name: 'Alvarez',
+    zwf_gender: 'M',
+    zwf_birth_date: '1991-09-20',
+  };
+
+  await sendData(formData, '/test');
+
+  assert.equal(userId, 1);
+  done();
 });

@@ -25,5 +25,7 @@
     "eslint-plugin-import": "^2.17.2",
     "qunit": "^2.9.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery-mockjax": "^2.5.0"
+  }
 }

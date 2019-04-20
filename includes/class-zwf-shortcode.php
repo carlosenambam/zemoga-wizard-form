@@ -28,7 +28,8 @@ class ZWFShortcode {
 		wp_enqueue_script( 'sweetalert', 'https://cdn.jsdelivr.net/npm/sweetalert2@8', array(), ZWF_VERSION, true );
 		wp_enqueue_script( 'zwf-scripts', ZMF_URL . 'assets/js/zwf-scripts.js', array( 'jquery', 'jquery-ui-datepicker' ), ZWF_VERSION, true );
 		wp_enqueue_script( 'qunit', ZMF_URL . 'node_modules/qunit/qunit/qunit.js', array(), ZWF_VERSION, true );
-		wp_enqueue_script( 'zwf-scripts-test', ZMF_URL . 'tests/js/zwf-scripts.js', array( 'qunit' ), ZWF_VERSION, true );
+		wp_enqueue_script( 'zwf-mockjax', ZMF_URL . 'node_modules/jquery-mockjax/dist/jquery.mockjax.min.js', array( 'jquery' ), ZWF_VERSION, true );
+		wp_enqueue_script( 'zwf-scripts-test', ZMF_URL . 'tests/js/zwf-scripts.js', array( 'qunit', 'zwf-mockjax' ), ZWF_VERSION, true );
 
 		wp_localize_script(
 			'zwf-scripts',

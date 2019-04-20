@@ -147,30 +147,33 @@ function getFormData(formFields) {
 /**
  * Send form data to the server using AJAX
  * @param {object} formData Data to send to the server
+ * @param {string} url url for the ajax call
  */
-function sendData(formData) {
+async function sendData(formData, url) {
   // Send form data to the server
-  $.ajax({
-    url: zwf_vars.ajax_url,
-    type: 'post',
-    data: formData,
-    dateType: 'json',
-    success: (response) => {
-      if ('error' === response.type) {
-        const { messages } = response;
+  try {
+    const response = await $.ajax({
+      url,
+      type: 'post',
+      data: formData,
+      dateType: 'json',
+    });
+    if ('error' === response.type) {
+      const { messages } = response;
 
-        showErrors(messages);
-      } else if ('success' === response.type) {
-        // The user ID from the database
-        userId = response.user_id;
-        nextStep();
-      }
-    },
-    error: (e, r) => {
-      alert('System Error');
-      console.log(r);
-    },
-  });
+      showErrors(messages);
+    } else if ('success' === response.type) {
+      // The user ID from the database
+      userId = response.user_id;
+      nextStep();
+    }
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    alert('System Error');
+    return false;
+  }
 }
 
 /**
@@ -188,7 +191,7 @@ function onNext() {
     showErrors(errorMessages);
     return;
   }
-  sendData(formData);
+  sendData(formData, zwf_vars.ajax_url);
 }
 
 /**
