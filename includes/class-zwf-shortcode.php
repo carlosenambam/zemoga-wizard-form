@@ -27,6 +27,8 @@ class ZWFShortcode {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'sweetalert', 'https://cdn.jsdelivr.net/npm/sweetalert2@8', array(), ZWF_VERSION, true );
 		wp_enqueue_script( 'zwf-scripts', ZMF_URL . 'assets/js/zwf-scripts.js', array( 'jquery', 'jquery-ui-datepicker' ), ZWF_VERSION, true );
+		wp_enqueue_script( 'qunit', ZMF_URL . 'node_modules/qunit/qunit/qunit.js', array(), ZWF_VERSION, true );
+		wp_enqueue_script( 'zwf-scripts-test', ZMF_URL . 'tests/js/zwf-scripts.js', array( 'qunit' ), ZWF_VERSION, true );
 
 		wp_localize_script(
 			'zwf-scripts',
@@ -39,9 +41,11 @@ class ZWFShortcode {
 
 		wp_enqueue_style( 'jquery-ui-styles', ZMF_URL . 'assets/css/jquery-ui.min.css', array(), ZWF_VERSION );
 		wp_enqueue_style( 'zwf-styles', ZMF_URL . 'assets/css/zwf-styles.css', array( 'jquery-ui-styles' ), ZWF_VERSION );
+		wp_enqueue_style( 'qunit-css', ZMF_URL . 'node_modules/qunit/qunit/qunit.css', array(), ZWF_VERSION );
 		ob_start(); // Start the buffer.
 		?>
 		<div class="zwf_container">
+			<div id="qunit"></div>
 			<p class="zwf_steps">Step 1 of 2</p>
 			<div class="zwf_fields">
 				<div id="step1">
